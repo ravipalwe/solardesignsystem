@@ -1,0 +1,164 @@
+{
+  "design_system": {
+    "name": "Solar Matcha: Sustainable Productivity UI",
+    "version": "2.0.0",
+    "description": "A high-efficiency, planet-centric adaptation of the Soft Matcha aesthetic. It prioritizes OLED energy savings, zero-latency system typography, and dithered imagery while retaining friendly geometry and vibrant lime-green accents.",
+    "ethos": [
+      "Dark Default: The interface defaults to dark mode to leverage OLED energy savings.",
+      "System-First Typography: Zero network footprint for fonts.",
+      "Grid-Awareness: Experience adapts (Eco/Standard/Rich) based on local energy carbon intensity.",
+      "Consensual Data: No auto-play media; users 'click-to-pay' the energy cost."
+    ]
+  },
+  "energy_modes": {
+    "eco": {
+      "description": "Active when grid carbon intensity is high (>150gCO2/kWh).",
+      "rules": {
+        "images": "hidden_with_alt_text",
+        "animations": "none",
+        "refresh_rate": "reduced"
+      }
+    },
+    "standard": {
+      "description": "Active during moderate grid intensity.",
+      "rules": {
+        "images": "dithered_grayscale",
+        "animations": "css_transform_only"
+      }
+    },
+    "rich": {
+      "description": "Active when grid is green/renewable.",
+      "rules": {
+        "images": "full_color_webp",
+        "animations": "standard"
+      }
+    }
+  },
+  "theme": {
+    "colors": {
+      "background": {
+        "app_canvas": "#000000",
+        "card_surface": "#121212",
+        "card_surface_hover": "#1A1A1A",
+        "badge_neutral": "#262626"
+      },
+      "text": {
+        "primary": "#E5E5E5",
+        "secondary": "#A3A3A3",
+        "tertiary": "#737373",
+        "link": "#DDEE88"
+      },
+      "accent": {
+        "primary": "#DDEE88",
+        "primary_dim": "#BBDD55",
+        "purple": "#A78BFA",
+        "blue": "#22D3EE", 
+        "red": "#F87171",
+        "success": "#34D399"
+      },
+      "borders": {
+        "subtle": "#262626",
+        "contrast": "#404040"
+      }
+    },
+    "typography": {
+      "font_family": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
+      "note": "Uses native OS fonts to eliminate HTTP requests and font files.",
+      "styles": {
+        "h1": { "size": "24px", "weight": "700", "letter_spacing": "-0.01em", "color": "#E5E5E5" },
+        "h2": { "size": "18px", "weight": "600", "color": "#E5E5E5" },
+        "body_primary": { "size": "14px", "weight": "400", "line_height": "1.6", "color": "#E5E5E5" },
+        "label": { "size": "12px", "weight": "500", "text_transform": "uppercase", "letter_spacing": "0.05em" }
+      }
+    },
+    "layout": {
+      "spacing": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px",
+        "lg": "24px",
+        "xl": "32px"
+      },
+      "container_padding": "24px",
+      "grid_gap": "24px"
+    },
+    "shapes": {
+      "border_radius": {
+        "card": "24px",
+        "button": "9999px",
+        "input": "12px",
+        "avatar": "50%",
+        "badge": "6px"
+      },
+      "borders": {
+        "width": "1px",
+        "style": "solid",
+        "color": "#262626"
+      }
+    },
+    "effects": {
+      "shadows": {
+        "card": "none",
+        "button": "none",
+        "elevation": "0 0 0 1px #262626"
+      },
+      "note": "Shadows removed to reduce rendering complexity; depth achieved via border contrast."
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "bg": "accent.primary",
+        "text": "#000000",
+        "radius": "shapes.border_radius.button",
+        "padding": "10px 24px",
+        "font_weight": "600",
+        "hover_brightness": "90%"
+      },
+      "secondary": {
+        "bg": "transparent",
+        "text": "text.primary",
+        "border": "1px solid #404040",
+        "radius": "shapes.border_radius.button"
+      }
+    },
+    "cards": {
+      "base": {
+        "bg": "background.card_surface",
+        "radius": "shapes.border_radius.card",
+        "padding": "layout.container_padding",
+        "border": "1px solid #262626"
+      }
+    },
+    "media": {
+      "images": {
+        "processing": "dithered_1bit_or_grayscale",
+        "format": "WebP",
+        "loading": "lazy",
+        "aesthetic": "Retro/Lo-Fi"
+      },
+      "video": {
+        "autoplay": "forbidden",
+        "pattern": "click_to_load_facade",
+        "placeholder": "SVG or Dithered Thumbnail"
+      }
+    },
+    "indicators": {
+      "battery_saver": {
+        "visible_when": "energy_mode == 'eco'",
+        "style": "icon_only",
+        "color": "accent.red"
+      },
+      "grid_status": {
+        "location": "footer",
+        "elements": ["co2_intensity", "server_location"]
+      }
+    }
+  },
+  "architecture_rules": {
+    "rendering": "Static Site Generation (SSG)",
+    "interaction": "Pagination over Infinite Scroll",
+    "animations": "CSS-only, no JavaScript-driven motion loops",
+    "third_party": "Facade pattern for all embeds (Maps, YouTube)"
+  }
+}
