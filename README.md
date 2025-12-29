@@ -1,21 +1,24 @@
 # Solar Design System
 
-A comprehensive, energy-efficient design system built for modern web applications. Solar Design System features a dark theme optimized for OLED displays, system-first typography, and a carefully crafted color palette.
+**Planet-first design system for digital experiences** - A comprehensive, energy-efficient design system built for modern web applications. SOLAR combats digital bloat with energy-aware components, design tokens, and carbon budgets baked into the process.
 
-![Solar Design System](https://img.shields.io/badge/version-1.0.0-green)
+![Solar Design System](https://img.shields.io/badge/version-1.5.0-green)
 ![React](https://img.shields.io/badge/React-18.2-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)
 
+> Created by **Ravi Palwe** - Product Designer with 20+ years of experience crafting accessible, high-performing interfaces. Learn more at [solardesignsystem.org](https://solardesignsystem.org)
+
 ## ✨ Features
 
 - 🌑 **Dark-first design** - Optimized for OLED energy savings
+- 🌍 **Energy-aware components** - Grid-responsive, carbon-transparent UI elements
 - 🎨 **Comprehensive color system** - 7 accent colors with semantic meaning
 - 📱 **Fully responsive** - Mobile-first approach
 - ♿ **Accessible** - WCAG AA compliant contrast ratios
 - ⚡ **Performance-focused** - System fonts, no shadows, minimal rendering
 - 🎯 **Type-safe** - Full TypeScript support
-- 📚 **Complete component library** - 20+ pre-built components
+- 📚 **Complete component library** - 12 components including 5 energy-aware
 
 ## 🚀 Quick Start
 
@@ -85,38 +88,56 @@ system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu
 
 ## 📚 Components
 
-The design system includes:
+### Dashboard Components
+- ✅ Header
+- ✅ StatsGrid (with metric cards)
+- ✅ ChartCard
+- ✅ RecentActivity
+- ✅ TopContent
+- ✅ Dashboard (complete layout)
+- ✅ DesignSystem (component showcase)
 
-- ✅ Buttons (Primary, Secondary, Time Range)
-- ✅ Input Fields (Text, Search, Textarea)
-- ✅ Select/Dropdown
-- ✅ Checkbox & Radio Buttons
-- ✅ Switch/Toggle
-- ✅ Tabs
-- ✅ Badges/Tags
-- ✅ Alerts/Notifications
-- ✅ Progress Bars
-- ✅ Slider/Range
-- ✅ Dividers
-- ✅ Avatars
-- ✅ Loading States
-- ✅ Empty States
-- ✅ Tooltip
-- ✅ Modal/Dialog
-- ✅ Navigation Items
-- ✅ Cards (Stat, Chart, Activity, Content)
+### ⚡ Energy-Aware Components
+
+**Planet-first components that make environmental costs visible:**
+
+- ✅ **EnergyModeIndicator** - Shows current energy mode (Eco/Standard/Rich) based on grid intensity
+- ✅ **CarbonFootprint** - Displays page carbon cost in grams CO₂
+- ✅ **ClickToLoadMedia** - Lazy-load facade for images/videos (consensual data loading)
+- ✅ **GridStatusBadge** - Real-time grid carbon intensity display
+- ✅ **DataCostBadge** - Shows environmental & financial cost of data-heavy actions
+
+**📖 Full documentation:** [ENERGY_COMPONENTS.md](./ENERGY_COMPONENTS.md)
 
 ## 📖 Documentation
 
-For complete documentation, see **[DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)**
+For complete documentation, see:
+- **[ENERGY_COMPONENTS.md](./ENERGY_COMPONENTS.md)** - Energy-aware components documentation
+- **[DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)** - Complete design tokens, colors, typography, and patterns
+- **[COMPONENTS.md](./COMPONENTS.md)** - Component index and reference
+- **[QUICK_START.md](./QUICK_START.md)** - Quick start guide
+- **[SETUP.md](./SETUP.md)** - Detailed setup instructions
 
-The documentation includes:
-- Complete color reference
-- Typography guide
-- Component examples
-- Usage patterns
-- Best practices
-- Accessibility guidelines
+## 🌍 SOLAR Mission
+
+SOLAR is a response to **digital bloat** - the unnecessary energy consumption of modern web applications. By making environmental costs visible and controllable, SOLAR empowers designers and developers to create sustainable digital experiences.
+
+### Core Principles
+
+1. **Dark Default** - OLED energy savings through pure black backgrounds
+2. **System-First Typography** - Zero network footprint for fonts
+3. **Grid-Awareness** - Adapt experience based on local energy carbon intensity
+4. **Consensual Data** - No auto-play media; users "click-to-pay" the energy cost
+5. **Carbon Budgets** - Performance and carbon budgets baked into the process
+
+### Why It Matters
+
+- The internet accounts for ~4% of global greenhouse gas emissions
+- A typical website visit produces 0.5-2g CO₂
+- Auto-playing videos and large images waste energy on renewable grids
+- Users deserve transparency about data and carbon costs
+
+**Learn more:** [solardesignsystem.org](https://solardesignsystem.org)
 
 ## 🎯 Usage Example
 

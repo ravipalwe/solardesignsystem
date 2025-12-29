@@ -1,8 +1,36 @@
 {
-  "name": "creator-analytics-dashboard",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@solar-ds/design-system",
+  "version": "1.5.0",
+  "description": "Planet-first design system for digital experiences. Energy-efficient components with dark-first design, system fonts, and carbon budgets baked in.",
   "type": "module",
+  "private": false,
+  "keywords": [
+    "design-system",
+    "solar",
+    "sustainable",
+    "energy-efficient",
+    "carbon",
+    "dark-mode",
+    "oled",
+    "react",
+    "typescript",
+    "tailwind",
+    "planet-first",
+    "green-web"
+  ],
+  "author": {
+    "name": "Ravi Palwe",
+    "url": "https://solardesignsystem.org"
+  },
+  "license": "MIT",
+  "homepage": "https://solardesignsystem.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ravipalwe/solardesignsystem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ravipalwe/solardesignsystem/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
