@@ -1,0 +1,664 @@
+{
+  "design_system": {
+    "name": "Creator Analytics Dashboard Design System",
+    "version": "1.0.0",
+    "description": "Comprehensive design system for the Creator Analytics Dashboard. A dark-themed, energy-efficient UI with lime-green accents and system-first typography.",
+    "philosophy": {
+      "dark_default": "Interface defaults to dark mode for OLED energy savings",
+      "system_typography": "Uses native OS fonts to eliminate HTTP requests",
+      "minimal_rendering": "No shadows, depth achieved via border contrast",
+      "accessibility_first": "High contrast ratios and clear visual hierarchy"
+    }
+  },
+  "colors": {
+    "background": {
+      "appCanvas": {
+        "value": "#000000",
+        "usage": "Main application background",
+        "tailwind_class": "bg-background-appCanvas"
+      },
+      "cardSurface": {
+        "value": "#121212",
+        "usage": "Card and surface backgrounds",
+        "tailwind_class": "bg-background-cardSurface"
+      },
+      "cardSurfaceHover": {
+        "value": "#1A1A1A",
+        "usage": "Card hover state",
+        "tailwind_class": "bg-background-cardSurfaceHover"
+      },
+      "badgeNeutral": {
+        "value": "#262626",
+        "usage": "Badge and nested element backgrounds",
+        "tailwind_class": "bg-background-badgeNeutral"
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "#E5E5E5",
+        "usage": "Primary text content, headings, important labels",
+        "tailwind_class": "text-text-primary",
+        "contrast_ratio": "15.8:1 on #000000"
+      },
+      "secondary": {
+        "value": "#A3A3A3",
+        "usage": "Secondary text, descriptions, metadata",
+        "tailwind_class": "text-text-secondary",
+        "contrast_ratio": "7.1:1 on #000000"
+      },
+      "tertiary": {
+        "value": "#737373",
+        "usage": "Tertiary text, timestamps, less important info",
+        "tailwind_class": "text-text-tertiary",
+        "contrast_ratio": "4.6:1 on #000000"
+      },
+      "link": {
+        "value": "#DDEE88",
+        "usage": "Links and interactive text",
+        "tailwind_class": "text-text-link"
+      }
+    },
+    "accent": {
+      "primary": {
+        "value": "#DDEE88",
+        "usage": "Primary accent color, buttons, highlights",
+        "tailwind_class": "bg-accent-primary",
+        "text_on_accent": "#000000"
+      },
+      "primaryDim": {
+        "value": "#BBDD55",
+        "usage": "Hover states on primary accent elements",
+        "tailwind_class": "bg-accent-primaryDim"
+      },
+      "purple": {
+        "value": "#A78BFA",
+        "usage": "Purple accent for variety (engagement metrics)",
+        "tailwind_class": "text-accent-purple"
+      },
+      "blue": {
+        "value": "#22D3EE",
+        "usage": "Blue accent (views, informational)",
+        "tailwind_class": "text-accent-blue"
+      },
+      "red": {
+        "value": "#F87171",
+        "usage": "Error states, negative changes",
+        "tailwind_class": "text-accent-red"
+      },
+      "success": {
+        "value": "#34D399",
+        "usage": "Success states, positive changes, revenue",
+        "tailwind_class": "text-accent-success"
+      }
+    },
+    "borders": {
+      "subtle": {
+        "value": "#262626",
+        "usage": "Default borders, card edges, dividers",
+        "tailwind_class": "border-borders-subtle"
+      },
+      "contrast": {
+        "value": "#404040",
+        "usage": "Higher contrast borders when needed",
+        "tailwind_class": "border-borders-contrast"
+      }
+    }
+  },
+  "typography": {
+    "font_family": {
+      "value": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif",
+      "usage": "System fonts for zero network footprint",
+      "tailwind_class": "font-sans"
+    },
+    "styles": {
+      "h1": {
+        "size": "24px",
+        "weight": "700",
+        "letter_spacing": "-0.01em",
+        "line_height": "1.2",
+        "color": "text.primary",
+        "usage": "Main page headings, card titles",
+        "tailwind_classes": "text-2xl font-bold",
+        "custom_style": "letterSpacing: '-0.01em'"
+      },
+      "h2": {
+        "size": "18px",
+        "weight": "600",
+        "letter_spacing": "normal",
+        "line_height": "1.3",
+        "color": "text.primary",
+        "usage": "Section headings, card section titles",
+        "tailwind_classes": "text-lg font-semibold"
+      },
+      "h3": {
+        "size": "14px",
+        "weight": "600",
+        "letter_spacing": "normal",
+        "line_height": "1.4",
+        "color": "text.primary",
+        "usage": "Subsection headings, content item titles",
+        "tailwind_classes": "text-sm font-semibold"
+      },
+      "body_primary": {
+        "size": "14px",
+        "weight": "400",
+        "letter_spacing": "normal",
+        "line_height": "1.6",
+        "color": "text.primary",
+        "usage": "Primary body text",
+        "tailwind_classes": "text-sm"
+      },
+      "body_secondary": {
+        "size": "14px",
+        "weight": "400",
+        "letter_spacing": "normal",
+        "line_height": "1.6",
+        "color": "text.secondary",
+        "usage": "Secondary body text, descriptions",
+        "tailwind_classes": "text-sm text-text-secondary"
+      },
+      "label": {
+        "size": "12px",
+        "weight": "500",
+        "letter_spacing": "0.05em",
+        "text_transform": "uppercase",
+        "line_height": "1.4",
+        "color": "text.secondary",
+        "usage": "Labels, stat card labels, metadata",
+        "tailwind_classes": "text-xs font-medium uppercase tracking-wider",
+        "custom_style": "letterSpacing: '0.05em'"
+      },
+      "stat_value": {
+        "size": "24px",
+        "weight": "700",
+        "letter_spacing": "-0.01em",
+        "line_height": "1.2",
+        "color": "text.primary",
+        "usage": "Large numeric values in stat cards",
+        "tailwind_classes": "text-2xl font-bold",
+        "custom_style": "letterSpacing: '-0.01em'"
+      },
+      "stat_metric": {
+        "size": "20px",
+        "weight": "700",
+        "letter_spacing": "normal",
+        "line_height": "1.2",
+        "color": "text.primary",
+        "usage": "Medium numeric values in cards",
+        "tailwind_classes": "text-xl font-bold"
+      },
+      "small_text": {
+        "size": "12px",
+        "weight": "400",
+        "letter_spacing": "normal",
+        "line_height": "1.4",
+        "color": "text.tertiary",
+        "usage": "Timestamps, fine print",
+        "tailwind_classes": "text-xs text-text-tertiary"
+      }
+    }
+  },
+  "spacing": {
+    "scale": {
+      "xs": {
+        "value": "4px",
+        "usage": "Tight spacing, icon padding",
+        "tailwind_class": "xs"
+      },
+      "sm": {
+        "value": "8px",
+        "usage": "Small gaps, compact spacing",
+        "tailwind_class": "sm"
+      },
+      "md": {
+        "value": "16px",
+        "usage": "Medium gaps, standard spacing",
+        "tailwind_class": "md"
+      },
+      "lg": {
+        "value": "24px",
+        "usage": "Large gaps, card padding, grid gaps",
+        "tailwind_class": "lg"
+      },
+      "xl": {
+        "value": "32px",
+        "usage": "Extra large gaps, section spacing",
+        "tailwind_class": "xl"
+      }
+    },
+    "container": {
+      "padding": {
+        "value": "24px",
+        "usage": "Card internal padding",
+        "tailwind_class": "p-6"
+      },
+      "max_width": {
+        "value": "1280px",
+        "usage": "Maximum container width",
+        "tailwind_class": "max-w-7xl"
+      },
+      "horizontal_padding": {
+        "value": "24px",
+        "usage": "Horizontal padding for main container",
+        "tailwind_class": "px-6"
+      },
+      "vertical_padding": {
+        "value": "24px",
+        "usage": "Vertical padding for main container",
+        "tailwind_class": "py-6"
+      }
+    },
+    "grid": {
+      "gap": {
+        "value": "24px",
+        "usage": "Gap between grid items",
+        "tailwind_class": "gap-6"
+      },
+      "gap_small": {
+        "value": "16px",
+        "usage": "Smaller gap for tighter layouts",
+        "tailwind_class": "gap-4"
+      }
+    }
+  },
+  "borders": {
+    "width": {
+      "default": "1px",
+      "usage": "Standard border width"
+    },
+    "style": {
+      "default": "solid",
+      "usage": "Border style"
+    },
+    "radius": {
+      "card": {
+        "value": "24px",
+        "usage": "Card corners, main containers",
+        "tailwind_class": "rounded-card"
+      },
+      "button": {
+        "value": "9999px",
+        "usage": "Fully rounded buttons (pill shape)",
+        "tailwind_class": "rounded-button"
+      },
+      "input": {
+        "value": "12px",
+        "usage": "Input fields, nested cards, activity items",
+        "tailwind_class": "rounded-input"
+      },
+      "badge": {
+        "value": "6px",
+        "usage": "Badges, small tags",
+        "tailwind_class": "rounded-badge"
+      },
+      "avatar": {
+        "value": "50%",
+        "usage": "Circular avatars",
+        "tailwind_class": "rounded-full"
+      },
+      "chart_bar": {
+        "value": "2px",
+        "usage": "Chart bar top corners",
+        "tailwind_class": "rounded-t-sm"
+      }
+    }
+  },
+  "shadows": {
+    "philosophy": "No shadows used. Depth achieved via border contrast and background color differences.",
+    "elevation": {
+      "method": "border contrast",
+      "border_color": "#262626",
+      "usage": "Use subtle borders to create visual separation"
+    }
+  },
+  "components": {
+    "header": {
+      "background": "background.cardSurface",
+      "border": "1px solid borders.subtle",
+      "padding": {
+        "horizontal": "24px",
+        "vertical": "16px"
+      },
+      "height": "auto",
+      "layout": "flex items-center justify-between",
+      "title": {
+        "size": "24px",
+        "weight": "700",
+        "color": "text.primary",
+        "letter_spacing": "-0.01em"
+      },
+      "subtitle": {
+        "size": "14px",
+        "color": "text.secondary",
+        "margin_top": "4px"
+      },
+      "avatar": {
+        "size": "40px",
+        "background": "background.badgeNeutral",
+        "border": "1px solid borders.subtle",
+        "radius": "50%",
+        "text_color": "accent.primary",
+        "text_weight": "600"
+      }
+    },
+    "stat_card": {
+      "background": "background.cardSurface",
+      "border": "1px solid borders.subtle",
+      "radius": "24px",
+      "padding": "24px",
+      "hover": {
+        "background": "background.cardSurfaceHover",
+        "transition": "transition-colors"
+      },
+      "layout": "flex flex-col",
+      "icon": {
+        "size": "24px",
+        "margin_bottom": "16px"
+      },
+      "badge": {
+        "background_positive": "accent.success with 20% opacity",
+        "background_negative": "accent.red with 20% opacity",
+        "text_color_positive": "accent.success",
+        "text_color_negative": "accent.red",
+        "padding": "4px 8px",
+        "radius": "6px",
+        "size": "12px",
+        "weight": "600"
+      },
+      "label": {
+        "size": "12px",
+        "weight": "500",
+        "color": "text.secondary",
+        "text_transform": "uppercase",
+        "letter_spacing": "0.05em",
+        "margin_bottom": "8px"
+      },
+      "value": {
+        "size": "24px",
+        "weight": "700",
+        "color": "text.primary",
+        "letter_spacing": "-0.01em"
+      }
+    },
+    "chart_card": {
+      "background": "background.cardSurface",
+      "border": "1px solid borders.subtle",
+      "radius": "24px",
+      "padding": "24px",
+      "title": {
+        "size": "18px",
+        "weight": "600",
+        "color": "text.primary",
+        "margin_bottom": "24px"
+      },
+      "chart": {
+        "height": "192px",
+        "bar": {
+          "background": "accent.primary",
+          "hover_background": "accent.primaryDim",
+          "radius": "2px (top only)",
+          "min_height": "4px",
+          "transition": "transition-all"
+        },
+        "axis_label": {
+          "size": "12px",
+          "color": "text.tertiary"
+        }
+      },
+      "footer": {
+        "border_top": "1px solid borders.subtle",
+        "padding_top": "16px",
+        "margin_top": "16px",
+        "layout": "flex justify-between"
+      },
+      "metric": {
+        "label": {
+          "size": "12px",
+          "weight": "500",
+          "color": "text.secondary",
+          "text_transform": "uppercase",
+          "letter_spacing": "0.05em",
+          "margin_bottom": "4px"
+        },
+        "value": {
+          "size": "20px",
+          "weight": "700",
+          "color": "text.primary"
+        }
+      }
+    },
+    "activity_item": {
+      "background": "background.badgeNeutral",
+      "border": "1px solid borders.subtle",
+      "radius": "12px",
+      "padding": "16px",
+      "hover": {
+        "background": "background.cardSurfaceHover",
+        "transition": "transition-colors"
+      },
+      "layout": "flex items-start gap-4",
+      "icon": {
+        "size": "20px",
+        "flex_shrink": "0"
+      },
+      "content": {
+        "flex": "1",
+        "min_width": "0"
+      },
+      "message": {
+        "size": "14px",
+        "weight": "500",
+        "color": "text.primary",
+        "margin_bottom": "4px"
+      },
+      "timestamp": {
+        "size": "12px",
+        "color": "text.tertiary"
+      }
+    },
+    "content_item": {
+      "background": "background.badgeNeutral",
+      "border": "1px solid borders.subtle",
+      "radius": "12px",
+      "padding": "16px",
+      "hover": {
+        "background": "background.cardSurfaceHover",
+        "transition": "transition-colors"
+      },
+      "layout": "flex items-start gap-4",
+      "thumbnail": {
+        "size": "30px",
+        "flex_shrink": "0"
+      },
+      "content": {
+        "flex": "1",
+        "min_width": "0"
+      },
+      "title": {
+        "size": "14px",
+        "weight": "600",
+        "color": "text.primary",
+        "margin_bottom": "8px",
+        "line_clamp": "2"
+      },
+      "metrics": {
+        "size": "12px",
+        "color": "text.secondary",
+        "layout": "flex flex-wrap gap-4",
+        "icon_colors": {
+          "views": "accent.blue",
+          "engagement": "accent.purple",
+          "revenue": "accent.success"
+        }
+      }
+    },
+    "button": {
+      "primary": {
+        "background": "accent.primary",
+        "color": "#000000",
+        "radius": "9999px",
+        "padding": "10px 24px",
+        "weight": "600",
+        "size": "14px",
+        "hover": {
+          "brightness": "90%"
+        },
+        "transition": "transition-colors"
+      },
+      "secondary": {
+        "background": "transparent",
+        "color": "text.primary",
+        "border": "1px solid borders.contrast",
+        "radius": "9999px",
+        "padding": "8px 16px",
+        "weight": "600",
+        "size": "14px",
+        "hover": {
+          "background": "background.cardSurfaceHover"
+        },
+        "transition": "transition-colors"
+      },
+      "time_range": {
+        "active": {
+          "background": "accent.primary",
+          "color": "#000000",
+          "border": "none"
+        },
+        "inactive": {
+          "background": "background.cardSurface",
+          "color": "text.primary",
+          "border": "1px solid borders.subtle"
+        },
+        "hover": {
+          "background": "background.cardSurfaceHover"
+        },
+        "padding": "8px 16px",
+        "radius": "9999px",
+        "size": "14px",
+        "weight": "600",
+        "transition": "transition-colors"
+      }
+    },
+    "card": {
+      "base": {
+        "background": "background.cardSurface",
+        "border": "1px solid borders.subtle",
+        "radius": "24px",
+        "padding": "24px"
+      },
+      "title": {
+        "size": "18px",
+        "weight": "600",
+        "color": "text.primary",
+        "margin_bottom": "24px"
+      }
+    }
+  },
+  "layout": {
+    "grid": {
+      "stats": {
+        "columns": {
+          "mobile": "1",
+          "tablet": "2",
+          "desktop": "4"
+        },
+        "gap": "24px",
+        "tailwind_classes": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      },
+      "charts": {
+        "columns": {
+          "mobile": "1",
+          "desktop": "2"
+        },
+        "gap": "24px",
+        "tailwind_classes": "grid grid-cols-1 lg:grid-cols-2 gap-6"
+      }
+    },
+    "container": {
+      "max_width": "1280px",
+      "padding": {
+        "horizontal": "24px",
+        "vertical": "24px"
+      },
+      "tailwind_classes": "container mx-auto px-6 py-6 max-w-7xl"
+    },
+    "spacing": {
+      "section": {
+        "margin_top": "24px",
+        "tailwind_class": "mt-6"
+      },
+      "element": {
+        "margin_bottom": "24px",
+        "tailwind_class": "mb-6"
+      }
+    }
+  },
+  "interactions": {
+    "transitions": {
+      "default": "transition-colors",
+      "duration": "150ms",
+      "easing": "ease-in-out"
+    },
+    "hover": {
+      "cards": "background changes to cardSurfaceHover",
+      "buttons": "brightness reduction or background change",
+      "chart_bars": "background changes to primaryDim"
+    },
+    "focus": {
+      "outline": "Should follow WCAG guidelines",
+      "style": "2px solid accent.primary with offset"
+    }
+  },
+  "design_guidelines": {
+    "color_usage": {
+      "primary_accent": "Use accent.primary (#DDEE88) sparingly for CTAs, active states, and key highlights",
+      "text_hierarchy": "Use primary for important content, secondary for descriptions, tertiary for metadata",
+      "semantic_colors": "Use success for positive metrics, red for negative, blue for informational, purple for engagement"
+    },
+    "spacing_rules": {
+      "consistency": "Use spacing scale (xs, sm, md, lg, xl) consistently",
+      "card_padding": "Always use 24px (lg) for card internal padding",
+      "grid_gaps": "Use 24px (lg) for grid gaps between cards",
+      "element_spacing": "Use 16px (md) for spacing between related elements within cards"
+    },
+    "typography_rules": {
+      "headings": "Use h1 for page titles, h2 for section titles, h3 for card titles",
+      "labels": "Always uppercase stat labels and metadata with 0.05em letter spacing",
+      "values": "Use bold weights (700) for numeric values with -0.01em letter spacing",
+      "line_clamp": "Use line-clamp-2 for titles that may overflow"
+    },
+    "component_patterns": {
+      "cards": "All cards use 24px border radius, 1px subtle border, 24px padding",
+      "hover_states": "All interactive cards transition to cardSurfaceHover on hover",
+      "nested_items": "Nested items (activity, content) use badgeNeutral background and 12px radius",
+      "icons": "Use emoji icons consistently, size 20-30px depending on context"
+    },
+    "accessibility": {
+      "contrast": "All text meets WCAG AA standards (minimum 4.5:1 for normal text)",
+      "focus": "Ensure all interactive elements have visible focus states",
+      "semantic_html": "Use proper heading hierarchy and semantic HTML elements"
+    },
+    "responsive_design": {
+      "breakpoints": {
+        "mobile": "default (no prefix)",
+        "tablet": "md: (768px+)",
+        "desktop": "lg: (1024px+)"
+      },
+      "grid_behavior": "Stats grid: 1 col mobile, 2 col tablet, 4 col desktop. Charts: 1 col mobile, 2 col desktop",
+      "spacing": "Maintain consistent spacing across breakpoints, adjust grid columns only"
+    },
+    "energy_efficiency": {
+      "animations": "Use CSS-only transitions, avoid JavaScript-driven animations",
+      "images": "Use emoji or SVG icons instead of image files when possible",
+      "rendering": "Avoid shadows, use border contrast for depth",
+      "fonts": "Use system fonts exclusively, no web fonts"
+    }
+  },
+  "implementation_notes": {
+    "tailwind_config": "All design tokens are defined in tailwind.config.js and should be referenced via Tailwind classes",
+    "custom_styles": "Some typography requires inline styles for letter-spacing (e.g., -0.01em, 0.05em)",
+    "component_structure": "Components are React functional components using TypeScript",
+    "state_management": "Use React useState for local component state",
+    "styling_approach": "Tailwind CSS utility classes with custom theme configuration"
+  }
+}

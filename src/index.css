@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ====================================================================
+     Solar Design System v2.0 — Theme Tokens
+     Planet-first · Dark-default · OLED-optimized · System fonts
+     ==================================================================== */
+  :root,
+  [data-theme="dark"] {
+    /* Background — layered surfaces for depth without shadows */
+    --solar-bg-canvas: 0 0 0;
+    --solar-bg-surface: 14 14 14;
+    --solar-bg-surface-hover: 22 22 22;
+    --solar-bg-elevated: 24 24 24;
+    --solar-bg-muted: 32 32 32;
+    --solar-bg-overlay: 0 0 0;
+
+    /* Text — refined contrast ratios (WCAG AAA on dark) */
+    --solar-text-primary: 237 237 237;
+    --solar-text-secondary: 156 156 156;
+    --solar-text-tertiary: 100 100 100;
+    --solar-text-link: 200 225 90;
+    --solar-text-inverse: 0 0 0;
+
+    /* Borders — two-tier system */
+    --solar-border-subtle: 30 30 30;
+    --solar-border-default: 48 48 48;
+    --solar-border-contrast: 72 72 72;
+
+    /* Accent — Warm Solar lime + semantic palette */
+    --solar-accent-primary: 200 225 90;
+    --solar-accent-primary-hover: 182 210 68;
+    --solar-accent-primary-dim: 165 195 50;
+    --solar-accent-amber: 245 158 11;
+    --solar-accent-rose: 244 63 94;
+    --solar-accent-teal: 20 184 166;
+    --solar-accent-purple: 167 139 250;
+    --solar-accent-cyan: 34 211 238;
+    --solar-accent-success: 74 222 128;
+
+    /* Elevation — minimal box-shadows for depth (GPU-light) */
+    --solar-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --solar-shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.4);
+    --solar-shadow-lg: 0 8px 24px -4px rgb(0 0 0 / 0.5);
+    --solar-shadow-focus: 0 0 0 2px rgb(200 225 90 / 0.4);
+
+    /* Transitions — energy-conscious durations */
+    --solar-transition-fast: 120ms;
+    --solar-transition-base: 180ms;
+    --solar-transition-slow: 280ms;
+
+    /* Overlay */
+    --solar-overlay-opacity: 0.72;
+  }
+
+  /* Light theme */
+  [data-theme="light"] {
+    --solar-bg-canvas: 250 250 249;
+    --solar-bg-surface: 255 255 255;
+    --solar-bg-surface-hover: 245 245 244;
+    --solar-bg-elevated: 255 255 255;
+    --solar-bg-muted: 240 240 238;
+    --solar-bg-overlay: 0 0 0;
+
+    --solar-text-primary: 23 23 23;
+    --solar-text-secondary: 82 82 82;
+    --solar-text-tertiary: 115 115 115;
+    --solar-text-link: 95 118 10;
+    --solar-text-inverse: 237 237 237;
+
+    --solar-border-subtle: 234 234 232;
+    --solar-border-default: 212 212 210;
+    --solar-border-contrast: 163 163 160;
+
+    --solar-accent-primary: 108 130 15;
+    --solar-accent-primary-hover: 90 112 8;
+    --solar-accent-primary-dim: 75 96 2;
+    --solar-accent-amber: 217 119 6;
+    --solar-accent-rose: 225 29 72;
+    --solar-accent-teal: 15 118 110;
+    --solar-accent-purple: 124 58 237;
+    --solar-accent-cyan: 8 145 178;
+    --solar-accent-success: 22 163 74;
+
+    --solar-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+    --solar-shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.08);
+    --solar-shadow-lg: 0 8px 24px -4px rgb(0 0 0 / 0.12);
+    --solar-shadow-focus: 0 0 0 2px rgb(108 130 15 / 0.3);
+
+    --solar-transition-fast: 120ms;
+    --solar-transition-base: 180ms;
+    --solar-transition-slow: 280ms;
+
+    --solar-overlay-opacity: 0.5;
+  }
+
+  /* Dim theme — reduced brightness for night use */
+  [data-theme="dim"] {
+    --solar-bg-canvas: 10 10 10;
+    --solar-bg-surface: 22 22 22;
+    --solar-bg-surface-hover: 32 32 32;
+    --solar-bg-elevated: 28 28 28;
+    --solar-bg-muted: 38 38 38;
+    --solar-bg-overlay: 0 0 0;
+
+    --solar-text-primary: 195 195 195;
+    --solar-text-secondary: 130 130 130;
+    --solar-text-tertiary: 90 90 90;
+    --solar-text-link: 175 200 80;
+    --solar-text-inverse: 0 0 0;
+
+    --solar-border-subtle: 36 36 36;
+    --solar-border-default: 52 52 52;
+    --solar-border-contrast: 70 70 70;
+
+    --solar-accent-primary: 175 200 80;
+    --solar-accent-primary-hover: 158 185 62;
+    --solar-accent-primary-dim: 140 170 48;
+    --solar-accent-amber: 210 140 20;
+    --solar-accent-rose: 220 55 85;
+    --solar-accent-teal: 20 130 120;
+    --solar-accent-purple: 150 120 230;
+    --solar-accent-cyan: 30 185 210;
+    --solar-accent-success: 55 200 140;
+
+    --solar-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.25);
+    --solar-shadow-md: 0 2px 8px -2px rgb(0 0 0 / 0.35);
+    --solar-shadow-lg: 0 8px 24px -4px rgb(0 0 0 / 0.45);
+    --solar-shadow-focus: 0 0 0 2px rgb(175 200 80 / 0.4);
+
+    --solar-transition-fast: 120ms;
+    --solar-transition-base: 180ms;
+    --solar-transition-slow: 280ms;
+
+    --solar-overlay-opacity: 0.65;
+  }
+
+  /* Base reset */
+  *,
+  *::before,
+  *::after {
+    border-color: rgb(var(--solar-border-subtle));
+  }
+
+  body {
+    @apply bg-background-appCanvas text-text-primary font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Respect user motion preferences — core Solar principle */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Focus ring utility — keyboard-only focus */
+  .solar-focus-ring {
+    @apply outline-none;
+  }
+  .solar-focus-ring:focus-visible {
+    box-shadow: var(--solar-shadow-focus);
+  }
+}
+
+@layer utilities {
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn var(--solar-transition-base) ease-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp var(--solar-transition-slow) ease-out;
+  }
+
+  .animate-slideDown {
+    animation: slideDown var(--solar-transition-slow) ease-out;
+  }
+}
+
